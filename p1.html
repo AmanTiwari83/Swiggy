@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: Exbold;
+            src: url(./Gilroy-ExtraBold-Rupee.woff2);
+        }
+
+        @font-face {
+            font-family: bold;
+            src: url(./Gilroy-Bold-Rupee.woff2);
+        }
+
+        :root {
+            --purple: #CCC0F5;
+            --orange: rgb(253, 82, 2);
+            --gray: rgba(161, 154, 154, 0.256);
+        }
+
+        #parent {
+            min-height: 100vh;
+            width: 100%;
+            font-family: exbold;
+
+            & nav {
+                padding: 15px 170px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(128, 128, 128, 0.449);
+                justify-content: space-between;
+                font-family: bold;
+                background-color: white;
+                position: sticky;
+                z-index: 99;
+                top: 0px;
+                #logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+
+                    img {
+                        height: 40px;
+
+                    }
+
+                    h2 {
+                        font-size: 18px;
+                        margin-top: 0px;
+                        padding-left: 30px;
+                        padding-top: 5px;
+                        border-left: 1px solid rgba(128, 128, 128, 0.466);
+
+                        i {
+                            color: var(--orange);
+                            font-size: 20px;
+                        }
+                        .dowm-arrow{
+                            color: var(--orange);
+                        }
+                    }
+                }
+
+                #nav-side {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-right: 30px;
+                    gap: 30px;
+
+                    input {
+                        height: 50px;
+                        width: 500px;
+                        background-color: #F0F0F5;
+                        padding: 10px;
+                        padding-left: 20px;
+                        border: none;
+                        border-radius: 15px;
+
+                    }
+
+                    input::placeholder {
+                        font-size: 15px;
+                        font-size: 18px;
+                    }
+
+                    i {
+                        font-size: 25px;
+                        border-radius: 50%;
+                        height: 50px;
+                        width: 50px;
+                        background-color: rgb(46, 44, 44);
+                        color: white;
+                        text-align: center;
+                        line-height: 50px;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            #slider {
+                height: 40vh;
+                display: flex;
+                align-items: center;
+                padding: 0px 170px;
+                margin-inline: 10px;
+                border-radius: 20px;
+                background: linear-gradient(transparent, var(--purple));
+
+                #left {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    width: 50%;
+
+                    h1 {
+                        font-family: exbold;
+                        line-height: 50px;
+                        color: rgba(0, 0, 0, 0.719);
+                        font-size: 48px;
+                        width: 300px;
+                    }
+
+                    svg {
+                        position: absolute;
+                        bottom: 65px;
+                        left: -34px;
+                        height: 10px;
+                        width: 200px;
+                    }
+                }
+
+                #right {
+                    height: 100%;
+                    width: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            #onmind {
+                min-height: 40vh;
+                padding: 30px 175px !important;
+
+                #onmind-section {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 20px;
+                    padding-bottom: 30px;
+                    justify-content: center;
+                    border-bottom: 2px solid var(--gray);
+
+                    .items {
+                        height: 200px;
+                        width: 200px;
+                        padding: 0px;
+                        padding: 10px;
+
+                        img {
+                            object-fit: cover;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            #top-restaurant {
+                padding: 10px 175px;
+
+                #tr-main {
+                    padding: 20px 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 50px;
+                    padding-bottom: 40px;
+                    border-bottom: 2px solid var(--gray);
+
+                    .res-cards {
+                        height: 100%;
+                        width: 30%;
+                        border-radius: 20px;
+                        position: relative;
+                        transition: all ease .2s;
+
+                        .res-img {
+                            height: 100%;
+                            width: 100%;
+
+                            img {
+                                height: 200px;
+                                width: 100%;
+                                border-radius: 20px;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .res-absolute {
+                            height: 200px;
+                            width: 100%;
+                            top: 0px;
+                            background: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.942));
+                            border-radius: 20px;
+                            position: absolute;
+                            display: flex;
+                            align-items: flex-end;
+
+                            h2 {
+                                color: white;
+                                padding: 10px;
+
+                            }
+                        }
+
+                        #res-card-bottom {
+                            padding: 10px;
+
+                            h4 {
+                                font-weight: 600;
+                                font-family: bold;
+                                font-size: 20px;
+                                margin-bottom: 5px;
+                            }
+
+                            h6 {
+                                font-weight: 100;
+                                font-family: bold;
+                                font-size: 15px;
+                                margin-block: 5px;
+                                display: flex;
+                                gap: 10px;
+                                align-items: center;
+
+                                i {
+                                    display: inline-block;
+                                    height: 25px;
+                                    font-size: 15px;
+                                    width: 25px;
+                                    border-radius: 50%;
+                                    line-height: 25px;
+                                    text-align: center;
+                                    color: white;
+                                    background-color: green;
+
+                                }
+                            }
+
+                            p {
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+                        }
+                    }
+
+                    .res-cards:hover {
+                        transition: all ease .2s;
+                        scale: .95;
+                    }
+                }
+            }
+
+            #online-res {
+
+                padding: 20px 115px;
+
+                h2 {
+                    margin-left: 60px;
+                }
+
+                #filters {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 6px;
+                    padding-block: 20px;
+
+                    h4 {
+                        border: 2px solid var(--gray);
+                        display: inline-block;
+                        border-radius: 20px;
+                        font-weight: bold;
+                        padding: 10px 20px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 15px;
+                        color: rgba(0, 0, 0, 0.752);
+                    }
+                }
+
+                #online-res-cards {
+                    padding: 20px 0px 0px;
+                    padding-inline: 60px;
+                    padding-bottom: 30px;
+                    border-bottom: 2px solid var(--gray);
+
+                    .row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 25px;
+                        margin-bottom: 25px;
+
+                        .res-cards {
+                            height: 100%;
+                            width: 35%;
+                            border-radius: 20px;
+                            position: relative;
+                            transition: all ease .2s;
+
+                            .res-img {
+                                height: 100%;
+                                width: 100%;
+
+                                img {
+                                    height: 170px;
+                                    width: 100%;
+                                    border-radius: 20px;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .res-absolute {
+                                height: 170px;
+                                width: 100%;
+                                top: 0px;
+                                background: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.942));
+                                border-radius: 20px;
+                                position: absolute;
+                                display: flex;
+                                align-items: flex-end;
+
+                                h2 {
+                                    color: white;
+                                    padding: 10px;
+                                    position: absolute;
+                                    left: -60px;
+                                    width: 100%;
+                                    bottom: 0;
+                                    i{
+                                        font-size: 20px
+                                    }
+                                }
+                            }
+
+                            #res-card-bottom {
+                                padding: 10px;
+
+                                h4 {
+                                    font-weight: 600;
+                                    font-family: bold;
+                                    font-size: 18px;
+                                }
+
+                                h6 {
+                                    font-weight: 100;
+                                    font-family: bold;
+                                    font-size: 15px;
+                                    margin-block: 5px;
+                                    display: flex;
+                                    gap: 10px;
+                                    align-items: center;
+
+                                    i {
+                                        display: inline-block;
+                                        height: 25px;
+                                        font-size: 15px;
+                                        width: 25px;
+                                        border-radius: 50%;
+                                        line-height: 25px;
+                                        text-align: center;
+                                        color: white;
+                                        background-color: green;
+
+                                    }
+                                }
+
+                                p {
+                                    font-family: Arial, Helvetica, sans-serif;
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 300px;
+                            font-weight: 700;
+                            padding: 20px;
+                            font-family: bold;
+                            border: 2px solid var(--gray);
+                            border-radius: 10px;
+                            background-color: transparent
+                        }
+                    }
+
+                    .res-cards:hover {
+                        transition: all ease .2s;
+                        scale: .95;
+                    }
+
+                    #last-row {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        .res-cards {
+                            width: 265px !important;
+                            overflow: hidden;
+                        }
+                    }
+
+
+
+                }
+
+            }
+
+            #foodculture {
+                padding: 30px 115px;
+
+                #fc-main {
+                    padding: 20px;
+                    border: 2px solid var(--gray);
+                    margin-top: 20px;
+                    padding-top: 40px;
+                    padding-bottom: 30px;
+                    border-radius: 15px;
+
+                    h1 {
+                        color: rgba(0, 0, 0, 0.719);
+                        font-size: 25px;
+                    }
+
+                    p {
+                        font-family: Arial, Helvetica, sans-serif;
+                        margin-top: 20px;
+                        margin-bottom: 0px;
+                        font-family: 13px;
+                        color: rgba(0, 0, 0, 0.577);
+                    }
+
+                    #orange {
+                        color: var(--orange);
+                        font-weight: 700;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .explore {
+                padding: 20px 115px;
+
+                h2 {
+                    margin-bottom: 15px;
+                }
+
+                .explore-rows {
+                    padding-block: 10px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    gap: 30px;
+
+                    h4 {
+                        padding: 20px 0px;
+                        width: 295px;
+                        text-align: center;
+                        font-size: 15px;
+                        border: 2px solid var(--gray);
+                        font-family: bold;
+                        border-radius: 10px;
+                        color: rgba(0, 0, 0, 0.71);
+                    }
+
+                    .showmore {
+                        color: black;
+                        font-weight: 900;
+                    }
+                }
+            }
+            footer{
+                padding: 50px 180px;
+                min-height: 500px;
+                background-color: var(--gray);
+                margin-top: 20px;
+                font-family: bold;
+                #footer-top{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-bottom: 30px;
+                    height: 420px;
+                    border-bottom: 2px solid var(--gray);
+                    gap: 20px;
+                    #footer-big{
+                        width: 35%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        img{
+                            height: 60px;
+                        }
+                        h5{
+                            font-weight: 100;
+                            margin-top: 10px;
+                        }
+                    }
+                    .footer-smalls{
+                        width: 15%;
+                        height: 100%;
+                        h3{
+                            margin-bottom: 20px;
+                        }
+                        P{
+                            font-weight: 500;
+                            font-family: Arial, Helvetica, sans-serif;
+                            margin-bottom: 20px;
+                        }
+                        .small-tops{
+                            height: 50%;
+                        }
+                        .small-bottoms{
+                            p{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                i{
+                                    font-size: 20px;
+                                }
+                             }
+                        }
+                    }
+                }
+                #footer-bottom{
+                    padding-top: 40px;
+                    display: flex;
+                    align-items: center;
+                    gap: 100px;
+                    justify-content: center;
+                    #bf-right{
+                        display: flex;
+                        align-items: center;
+                        gap: 50px;
+                        justify-content: center;
+                        img{
+                            height: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <nav>
+            <div id="logo">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_260/portal/m/seo/Logos/Swiggy/Swiggy%20logo-2.png"
+                    alt="" srcset="">
+                <h2><i class="ri-send-plane-fill"></i> Setup Your Preclse location  <i class="fa-solid fa-angle-down dowm-arrow"></i></h2>
+            </div>
+            <div id="nav-side">
+                <input type="text"
+                    placeholder="Search for restaurant and food                                          0">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </nav>
+        <div id="slider">
+            <div id="left">
+                <h1>Order Food Online in Lucknow</h1>
+                <svg width="100%" height="100%" viewBox="0 0 78 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.25939C27 -0.240624 53.5 -0.2406 77 4.25939" stroke="#FF5200" stroke-width="1.5">
+                    </path>
+                </svg>
+            </div>
+            <div id="right">
+                <img src="./cm-7.avif" alt="" srcset="">
+            </div>
+        </div>
+        <div id="onmind">
+            <h2 class="headig">What's on my mind?</h2>
+            <div id="onmind-section">
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Pizzas.png"
+                        alt="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_North%20Indian.png"
+                        alt="" srcset="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png"
+                        alt="" srcset="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Chinese.png"
+                        alt="" srcset="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png"
+                        alt="" srcset="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Dosa.png"
+                        alt="" srcset="">
+                </div>
+                <div class="items">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/17/58760e8e-324f-479e-88fa-31800120ea38_Rolls1.png"
+                        alt="" srcset="">
+                </div>
+            </div>
+        </div>
+        <div id="top-restaurant">
+            <h2>Top restaurant chains in Lucknow</h2>
+            <div id="tr-main">
+                <div class="res-cards">
+                    <div class="res-img">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
+                            alt="">
+                    </div>
+                    <div class="res-absolute">
+                        <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>199</h2>
+                    </div>
+
+                    <div id="res-card-bottom">
+                        <h4>Chines Wok</h4>
+                        <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                        <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                    </div>
+                </div>
+                <div class="res-cards">
+                    <div class="res-img">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/7/17/a2d988f2-df13-4daf-8b29-4e5562e2c2d7_60379.jpg"
+                            alt="">
+                    </div>
+                    <div class="res-absolute">
+                        <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>189</h2>
+                    </div>
+
+                    <div id="res-card-bottom">
+                        <h4>Chines Wok</h4>
+                        <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                        <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                    </div>
+                </div>
+                <div class="res-cards">
+                    <div class="res-img">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/c3b37a65-3b1e-4203-a759-f1d2c828dcf9_231204.jpg"
+                            alt="">
+                    </div>
+                    <div class="res-absolute">
+                        <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>99</h2>
+                    </div>
+
+                    <div id="res-card-bottom">
+                        <h4>Chines Wok</h4>
+                        <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                        <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="online-res">
+            <h2>Restaurants with online food delivery in Lucknow</h2>
+            <div id="filters">
+                <h4>Filter  <i class="fa-duotone fa-solid fa-arrow-up-big-small"></i></h4>
+                <h4>Sort By <i class="fa-solid fa-angle-down"></i></h4>
+                <h4>Fast Delivery</h4>
+                <h4>New on Swiggy</h4>
+                <h4>Rating 4.0+</h4>
+                <h4>Pure Veg</h4>
+                <h4>Offers</h4>
+                <h4>On Time</h4>
+                <h4>Less than Rs. 300</h4>
+            </div>
+            <div id="online-res-cards">
+                <div class="row">
+
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
+                                alt="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>199</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Chines Wok</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gqllu2qnsrawyuk4op5x"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>175 OFF ON + <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>499</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Al Baike Arabecuse</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/yood4aumr1wbxed1odxk"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2> <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>125 OF + <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>199</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Mughal Zaika Aminabad</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/10/19/127a37c1-a96a-484d-8534-d104f0cd211b_850589.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>125 OFF +  <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>249</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Olio - The Wood Fried</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/5/7/ff83fddc-cff4-4f7c-b53d-732a3ac925ec_66738.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2>60% OFF UPTO <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>115</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Al Baike Aminabad</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/5/30/d79c3b2e-ef3f-4c85-b36c-2b0d1ed43cee_855699.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>125 OFF +  <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>249</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Legends Eats</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mz76cmtw79td4mzk2fvi"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>100 OFF + <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>249</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Shri Balaji Dhaba</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xabqkb24rjrv8m1jrjpw"
+                                alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>175 OFF + <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>449</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>La Pino'z Pizza</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row " id="last-row">
+
+                    <div class="res-cards">
+                        <div class="res-img">
+                           <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/11/5/fba76b6d-7a97-4241-ada0-033b269af7de_405025.JPG" alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>179</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>KFC</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                    <div class="res-cards">
+                        <div class="res-img">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/c3b37a65-3b1e-4203-a759-f1d2c828dcf9_231204.jpg" alt="" srcset="">
+                        </div>
+                        <div class="res-absolute">
+                            <h2>ITEMS AT <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>99</h2>
+                        </div>
+
+                        <div id="res-card-bottom">
+                            <h4>Burger King</h4>
+                            <h6><span><i class="fa-solid fa-star"></i></span> 4.2 • 30-35 mins</h6>
+                            <p>Chinese, Asian, Tibetan, Desserts <br>Alambagh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button>Show More <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+        <div id="foodculture">
+            <h2>Food Culture in Lucknow</h2>
+            <div id="fc-main">
+                <h1>Order Food Online in Lucknow to Taste Its delicacies</h1>
+                <p>Consider yourself on your couch, enjoying your favorite show while holding a mouthwatering meal.
+                    Right, it feels good! A food delivery service online makes this possible. By offering food whenever
+                    or wherever you desire, food delivery offers the most significant benefit. The popularity of online
+                    food delivery services is growing and is at its height. Due to its popularity, it is becoming one of
+                    the convenient options which people are opting increasingly these days. The demand is continually
+                    rising because the...</p>
+                <p id="orange">See more  <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+        </div>
+        <div id="explores">
+            <div class="explore">
+                <h2>Explore localities in around Lucknow</h2>
+                <div class="explore-rows">
+                    <h4>Ndc Lucknow GAIVE</h4>
+                    <h4>Ndc Lucknow Chowk Ho</h4>
+                    <h4>Amarhar</h4>
+                    <h4>Thakurganj</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Sikrauri</h4>
+                    <h4>Sarsaundi</h4>
+                    <h4>Muradabad</h4>
+                    <h4>Barauli Jata</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Fateh Nagar</h4>
+                    <h4>Bhauli</h4>
+                    <h4>Sairpur</h4>
+                    <h4 class="showmore">Show More  <i class="fa-solid fa-angle-down"></i></h4>
+                </div>
+            </div>
+            <div class="explore">
+                <h2>What's Lucknow eating! People ordering in Lucknow</h2>
+                <div class="explore-rows">
+                    <h4>Ndc Lucknow GAIVE</h4>
+                    <h4>Ndc Lucknow Chowk Ho</h4>
+                    <h4>Amarhar</h4>
+                    <h4>Thakurganj</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Sikrauri</h4>
+                    <h4>Sarsaundi</h4>
+                    <h4>Muradabad</h4>
+                    <h4>Barauli Jata</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Fateh Nagar</h4>
+                    <h4>Bhauli</h4>
+                    <h4>Sairpur</h4>
+                    <h4 class="showmore">Show More  <i class="fa-solid fa-angle-down"></i></h4>
+                </div>
+            </div>
+            <div class="explore">
+                <h2>
+                    Restaurant Chains in Lucknow</h2>
+                <div class="explore-rows">
+                    <h4>Ndc Lucknow GAIVE</h4>
+                    <h4>Ndc Lucknow Chowk Ho</h4>
+                    <h4>Amarhar</h4>
+                    <h4>Thakurganj</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Sikrauri</h4>
+                    <h4>Sarsaundi</h4>
+                    <h4>Muradabad</h4>
+                    <h4>Barauli Jata</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Fateh Nagar</h4>
+                    <h4>Bhauli</h4>
+                    <h4>Sairpur</h4>
+                    <h4 class="showmore">Show More  <i class="fa-solid fa-angle-down"></i></h4>
+                </div>
+            </div>
+            <div class="explore">
+                <h2>
+    
+                    Popular Dishes in Lucknow</h2>
+                <div class="explore-rows">
+                    <h4>Ndc Lucknow GAIVE</h4>
+                    <h4>Ndc Lucknow Chowk Ho</h4>
+                    <h4>Amarhar</h4>
+                    <h4>Thakurganj</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Sikrauri</h4>
+                    <h4>Sarsaundi</h4>
+                    <h4>Muradabad</h4>
+                    <h4>Barauli Jata</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Fateh Nagar</h4>
+                    <h4>Bhauli</h4>
+                    <h4>Sairpur</h4>
+                    <h4 class="showmore">Show More  <i class="fa-solid fa-angle-down"></i></h4>
+                </div>
+            </div>
+            <div class="explore">
+                <h2>
+                    More Food Options Near Me
+                </h2>
+                <div class="explore-rows">
+                    <h4>Ndc Lucknow GAIVE</h4>
+                    <h4>Ndc Lucknow Chowk Ho</h4>
+                    <h4>Amarhar</h4>
+                    <h4>Thakurganj</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Sikrauri</h4>
+                    <h4>Sarsaundi</h4>
+                    <h4>Muradabad</h4>
+                    <h4>Barauli Jata</h4>
+                </div>
+                <div class="explore-rows">
+                    <h4>Fateh Nagar</h4>
+                    <h4>Bhauli</h4>
+                    <h4>Sairpur</h4>
+                    <h4 class="showmore">Show More  <i class="fa-solid fa-angle-down"></i></h4>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="footer-top">
+                <div id="footer-big">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_260/portal/m/seo/Logos/Swiggy/Swiggy%20logo-2.png" alt="" srcset="">
+                    <h5>&copy; 2024 Swiggy Limited</h5>
+                </div>
+                <div class="footer-smalls">
+                    <h3>Company</h3>
+                    <p>About Us</p>
+                    <p>Swiggy Corporate</p>
+                    <p>Careers</p>
+                    <p>Team</p>
+                    <p>Swiggy One</p>
+                    <p>Swiggy Instamart</p>
+                    <p>Swiggy Dineout</p>
+                    <p>Swiggy Genie</p>
+                </div>
+                <div class="footer-smalls">
+                    <div class="small-tops">
+                        <h3>Contact Us</h3>
+                        <p>Help & Support</p>
+                        <p>Partner with us</p>
+                        <p>Role with us</p>
+                    </div>
+                    <div class="small-bottoms">
+                        <h3>Legal</h3>
+                        <p>Terms & Conditions</p>
+                        <p>Cookie Policy</p>
+                        <p>Privacy Policy</p>
+                        <p>Investor Relations</p>
+                    </div>
+                </div>
+                <div class="footer-smalls">
+                    <h3>Available</h3>
+                    <p>Bangolore</p>
+                    <p>Gurgoan</p>
+                    <p>Hyderabad</p>
+                    <p>Delhi</p>
+                    <p>Mumbai</p>
+                    <p>Pune</p>
+                </div>
+                <div class="footer-smalls">
+                    <div class="small-tops">
+                        <h3>Life of Swiggy</h3>
+                        <p>Explore with Swiggy</p>
+                        <p>Swiggy News</p>
+                        <p>Snacknies</p>
+
+                    </div>
+                    <div class="small-bottoms">
+                        <h3>Social Links</h3>
+                        <p>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-pinterest"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-bottom">
+                <h2>For better experience,download the Swiggy app now
+
+                </h2>
+                <div id="bf-right">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png" alt="">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png" alt="" srcset="">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
