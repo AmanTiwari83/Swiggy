@@ -14,8 +14,6 @@ This project is intended to **showcase frontend design expertise** using core we
 
 ---
 
-<img src="../Downloads/swiggy.png" />
-
 ## 🖼️ Features
 
 - Hero section with promotional banner
