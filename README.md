@@ -45,7 +45,7 @@ Built with mobile-first design principles using Bootstrap classes to ensure:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/swiggy-ui-clone.git
+git clone https://github.com/AmanTiwari83/swiggy-ui-clone.git
 ```
 
 2. Open `index.html` in any modern browser.
